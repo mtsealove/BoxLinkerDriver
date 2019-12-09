@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "689500624403",
+    "firebase_url": "https://boxlinkerdriver.firebaseio.com",
+    "project_id": "boxlinkerdriver",
+    "storage_bucket": "boxlinkerdriver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689500624403:android:8067905590c7a7823d91e6",
+        "android_client_info": {
+          "package_name": "com.mtsealove.github.boxlinker_driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689500624403-6u9u9c2r471h4o59tdh6okfm79lu05kp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMQ-N-RqebBRivbCOFUUfwtdaj9kgFAvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689500624403-6u9u9c2r471h4o59tdh6okfm79lu05kp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

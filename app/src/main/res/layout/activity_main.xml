@@ -8,11 +8,50 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    >
         <com.mtsealove.github.boxlinker_driver.Design.TitleView android:layout_width="match_parent"
+                                                                android:id="@+id/titleView"
                                                                 android:layout_height="wrap_content"/>
-    </LinearLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/titleView"
+                  android:textColor="@color/black"
+                  android:textSize="24sp"
+                  android:layout_marginHorizontal="15dp"
+                  android:layout_marginVertical="10dp"
+                  android:id="@+id/newTv"
+                  android:text="새로운 주문"/>
+
+        <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:layout_above="@id/myOrderBtn"
+                                                   android:layout_marginHorizontal="15dp"
+                                                   android:layout_below="@id/newTv"
+                                                   android:id="@+id/newOrderRv"/>
+
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:id="@+id/myOrderBtn"
+                android:background="@drawable/btn_primary"
+                android:text="내 주문 확인"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_above="@id/stopBtn"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"/>
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:id="@+id/stopBtn"
+                android:background="@drawable/btn_blue"
+                android:text="운행 종료"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="10dp"/>
+
+    </RelativeLayout>
 
     <com.mtsealove.github.boxlinker_driver.Design.SlideView android:layout_width="300dp"
                                                             android:layout_height="match_parent"

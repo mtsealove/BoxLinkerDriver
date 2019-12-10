@@ -13,7 +13,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.mtsealove.github.boxlinker_driver.LastOrderActivity;
 import com.mtsealove.github.boxlinker_driver.R;
+import com.mtsealove.github.boxlinker_driver.Restful.ResRecent;
+import com.mtsealove.github.boxlinker_driver.Restful.RestAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -64,7 +67,7 @@ public class SlideView extends LinearLayout {
         inquireTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //InquireLog();
+                InquireLog();
             }
         });
         addView(view);
@@ -79,7 +82,7 @@ public class SlideView extends LinearLayout {
         //로그인되어 있을 경우
         if (name.length() != 0 && phone.length() != 0) {
             //최근 사용 내역
-
+            GetRecent();
             loginTv.setVisibility(GONE);
             loginLayout.setVisibility(VISIBLE);
             nameTv.setText(name);
@@ -118,11 +121,31 @@ public class SlideView extends LinearLayout {
         dialog.show();
     }
 
-    /*
     private void InquireLog() {
-        Intent intent = new Intent(context, OrderListActivity.class);
+        Intent intent = new Intent(context, LastOrderActivity.class);
         context.startActivity(intent);
     }
 
-     */
+
+    //최근 배송
+    private void GetRecent() {
+        SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
+        String phone = pref.getString("phone", "");
+        RestAPI restAPI=new RestAPI(context);
+        Call<ResRecent> call=restAPI.getRetrofitService().GetRecent(phone);
+        call.enqueue(new Callback<ResRecent>() {
+            @Override
+            public void onResponse(Call<ResRecent> call, Response<ResRecent> response) {
+               if(response.isSuccessful()) {
+                   ResRecent resRecent=response.body();
+                   contentTv.setText("최근 배송: "+resRecent.getRecent()+"건");
+               }
+            }
+
+            @Override
+            public void onFailure(Call<ResRecent> call, Throwable t) {
+
+            }
+        });
+    }
 }

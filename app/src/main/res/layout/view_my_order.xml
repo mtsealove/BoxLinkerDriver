@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/clickLayout"
+              android:clickable="true"
+              android:orientation="vertical">
+    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                       android:layout_marginTop="10dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:padding="10dp"
+                          android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textColor="@color/black"
+                          android:text="주문번호"
+                          android:textSize="20sp"
+                          android:id="@+id/orderIdTv"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="출발: "
+                          android:id="@+id/stTv"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="도착: "
+                          android:id="@+id/dstTimeTv"
+                          android:visibility="gone"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="회사 "
+                          android:id="@+id/corpTv"
+                          android:visibility="gone"
+                          android:textSize="16sp"
+                          android:textColor="@color/black" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="도착: "
+                          android:id="@+id/dstTv"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="크기: "
+                          android:id="@+id/itemTv"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginTop="5dp"
+                          android:textColor="@color/black"
+                          android:text="연락처"
+                          android:textSize="20sp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="보내는 사람"
+                          android:id="@+id/stPhoneTv"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="받는 사람"
+                          android:id="@+id/dstPhoneTv"
+                          android:textSize="16sp"
+                          android:textColor="@color/black"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
